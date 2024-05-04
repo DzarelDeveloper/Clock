@@ -1,0 +1,489 @@
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+  }
+
+  html {
+
+    overflow-x: hidden;
+
+  }
+
+  body {
+
+    background: #434343;
+
+    width: 100%;
+
+    height: 100svh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-family: "Bungee Spice", sans-serif;
+
+    overflow-x: hidden;
+
+    min-height: 480px;
+
+  }
+
+  .container {
+
+    position: relative;
+
+    min-height: 250px;
+
+  }
+
+  .bubble-wrap {
+
+    width: 350px;
+
+    height: 350px;
+
+    border-radius: 50%;
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    overflow: hidden;
+
+  }
+
+  .bubbles-bg {
+
+    position: relative;
+
+    height: 100%;
+
+    display: flex;
+
+    gap: 22px;
+
+    justify-content: center;
+
+    width: 100%;
+
+  }
+
+  .bubbles-bg span {
+
+    display: inline-block;
+
+    position: relative;
+
+    width: 8px;
+
+    height: 8px;
+
+    border-radius: 50%;
+
+    animation: animate 5s linear infinite;
+
+    animation-duration: calc(150s / var(--i));
+
+  }
+
+  @keyframes animate {
+
+    0% {
+
+      transform: translateY(350px) scale(0);
+
+      background-color: #df6208;
+
+      box-shadow: 0px 0px 4px 4px #e67d31, 0 0 30px #e67d31, 0 0 70px #e67d31;
+
+    }
+
+    50% {
+
+      background: #d3df08;
+
+      box-shadow: 0px 0px 4px 4px #e4ec53, 0 0 30px #e4ec53, 0 0 70px #e4ec53;
+
+    }
+
+    70% {
+
+      background: #df0808;
+
+      box-shadow: 0px 0px 4px 4px #ec4242, 0 0 30px #ec4242, 0 0 70px #ec4242;
+
+    }
+
+    100% {
+
+      transform: translateY(-10px) scale(1);
+
+      background-color: #df6208;
+
+      box-shadow: 0px 0px 4px 4px #e67d31, 0 0 30px #e67d31, 0 0 70px #e67d31;
+
+    }
+
+  }
+
+  .clock {
+
+    width: 350px;
+
+    height: 350px;
+
+    border-radius: 50%;
+
+    position: relative;
+
+    -webkit-box-shadow: inset inset 0px 0px 12px 12px rgba(0, 0, 0, 1),
+
+      0px 0px 65px 5px rgba(0, 0, 0, 0.5);
+
+    -moz-box-shadow: inset inset 0px 0px 12px 12px rgba(0, 0, 0, 1),
+
+      0px 0px 65px 5px rgba(0, 0, 0, 0.5);
+
+    box-shadow: inset 0px 0px 12px 12px rgba(0, 0, 0, 1),
+
+      0px 0px 65px 5px rgba(0, 0, 0, 0.5);
+
+    background: #1a1c1a;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    margin-bottom: 110px;
+
+  }
+
+  .clock::before {
+
+    content: "";
+
+    width: 10px;
+
+    height: 10px;
+
+    border-radius: 50%;
+
+    border: 2px solid #df6208;
+
+    background-color: #2f362f;
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 1;
+
+  }
+
+  .inner-circle {
+
+    width: 200px;
+
+    height: 350px;
+
+    border-radius: 50%;
+
+    position: absolute;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: start;
+
+  }
+
+  .inner-circle-2 {
+
+    width: 150px;
+
+    height: 250px;
+
+  }
+
+  .inner-circle-3 {
+
+    width: 100px;
+
+    height: 155px;
+
+  }
+
+  .border-circle {
+
+    border-radius: 50%;
+
+    position: absolute;
+
+    background: transparent;
+
+    border: 2px solid rgba(223, 98, 8, 0.2);
+
+    left: 50%;
+
+    top: 50%;
+
+    width: 180px;
+
+    height: 180px;
+
+    transform: translate(-50%, -50%);
+
+  }
+
+  .border-circle:nth-child(2) {
+
+    width: 130px;
+
+    height: 130px;
+
+  }
+
+  .border-circle:nth-child(3) {
+
+    width: 80px;
+
+    height: 80px;
+
+  }
+
+  .inner-circle div {
+
+    position: relative;
+
+    height: 50%;
+
+    width: 7px;
+
+    z-index: 1;
+
+    border-radius: 5px;
+
+    display: inline-block;
+
+    transform-origin: bottom;
+
+    transform: scale(0.5);
+
+    z-index: 0;
+
+    background: rgb(223, 98, 8);
+
+    background: linear-gradient(
+
+      180deg,
+
+      rgba(223, 98, 8, 0.9108018207282913) 50%,
+
+      rgba(255, 0, 0, 0.9304096638655462) 100%
+
+    );
+
+  }
+
+  .inner-circle-2 div {
+
+    width: 4px;
+
+  }
+
+  .inner-circle-3 div {
+
+    width: 3px;
+
+  }
+
+  span {
+
+    position: absolute;
+
+    text-align: center;
+
+    transform: rotate(calc(var(--i) * 29.7deg));
+
+    inset: 25px;
+
+  }
+
+  span b {
+
+    font-size: 18px;
+
+    position: absolute;
+
+    text-align: center;
+
+    transform: rotateZ(calc(var(--i) * -30deg));
+
+    display: inline-block;
+
+    opacity: 0.9;
+
+  }
+
+  
+
+  /* digital clock */
+
+  .digital-time-wrap {
+
+    width: 10px;
+
+    height: 80%;
+
+    background-color: #1a1c1a;
+
+    position: absolute;
+
+    left: 48.5%;
+
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    z-index: -1;
+
+    animation-name: rotate;
+
+    animation-duration: 2s;
+
+    animation-iteration-count: infinite;
+
+    transform-origin: 50% 0%;
+
+    animation-timing-function: linear;
+
+  }
+
+  @keyframes rotate {
+
+    0% {
+
+      transform: rotate(-6deg);
+
+      animation-timing-function: ease-in;
+
+    }
+
+    25% {
+
+      transform: rotate(0deg);
+
+      animation-timing-function: ease-out;
+
+    }
+
+    50% {
+
+      transform: rotate(6deg);
+
+      animation-timing-function: ease-in;
+
+    }
+
+    75% {
+
+      transform: rotate(0deg);
+
+      animation-timing-function: ease-out;
+
+    }
+
+    100% {
+
+      transform: rotate(-6deg);
+
+    }
+
+  }
+
+  #digital-time {
+
+    width: fit-content;
+
+    display: flex;
+
+    padding: 10px;
+
+    border: 2px solid rgba(0, 0, 0, 0.5);
+
+    border-radius: 20px;
+
+    -webkit-box-shadow: 0px 0px 65px 5px rgba(0, 0, 0, 0.5);
+
+    -moz-box-shadow: 0px 0px 65px 5px rgba(0, 0, 0, 0.5);
+
+    box-shadow: 0px 0px 65px 5px rgba(0, 0, 0, 0.5);
+
+    background: #242824;
+
+    position: absolute;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    bottom: 0;
+
+  }
+
+  #digital-time div {
+
+    font-size: 20px;
+
+    width: 50px;
+
+    text-align: center;
+
+    position: relative;
+
+  }
+
+  #digital-time div:nth-child(1)::after,
+
+  #digital-time div:nth-child(2)::after {
+
+    content: ":";
+
+    position: absolute;
+
+    right: -4px;
+
+    opacity: 0.7;
+
+  }
+
+  #digital-time div:nth-child(4) {
+
+    font-size: 18px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+  }
+
+  
